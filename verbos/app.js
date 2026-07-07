@@ -1,0 +1,578 @@
+const VERBS=[
+{"inf":"abrir","group":"regular","f":{"pres_ind":["abro","abres","abre","abrimos","abris","abrem"],"pretperf_ind":["abri","abriste","abriu","abrimos","abristes","abriram"],"pretimp_ind":["abria","abrias","abria","abríamos","abríeis","abriam"],"futpres_ind":["abrirei","abrirás","abrirá","abriremos","abrireis","abrirão"],"futpret_ind":["abriria","abririas","abriria","abriríamos","abriríeis","abririam"],"pres_subj":["abra","abras","abra","abramos","abrais","abram"],"pretimp_subj":["abrisse","abrisses","abrisse","abríssemos","abrísseis","abrissem"],"fut_subj":["abrir","abrires","abrir","abrirmos","abrirdes","abrirem"],"imp_af":["abre","abra","abramos","abri","abram"],"imp_neg":["abras","abra","abramos","abrais","abram"],"inf_pessoal":["abrir","abrires","abrir","abrirmos","abrirdes","abrirem"],"formas_np":["abrir","abrindo","aberto"]}},
+{"inf":"agradecer","group":"regular","f":{"pres_ind":["agradeço","agradeces","agradece","agradecemos","agradeceis","agradecem"],"pretperf_ind":["agradeci","agradeceste","agradeceu","agradecemos","agradecestes","agradeceram"],"pretimp_ind":["agradecia","agradecias","agradecia","agradecíamos","agradecíeis","agradeciam"],"futpres_ind":["agradecerei","agradecerás","agradecerá","agradeceremos","agradecereis","agradecerão"],"futpret_ind":["agradeceria","agradecerias","agradeceria","agradeceríamos","agradeceríeis","agradeceriam"],"pres_subj":["agradeça","agradeças","agradeça","agradeçamos","agradeçais","agradeçam"],"pretimp_subj":["agradecesse","agradecesses","agradecesse","agradecêssemos","agradecêsseis","agradecessem"],"fut_subj":["agradecer","agradeceres","agradecer","agradecermos","agradecerdes","agradecerem"],"imp_af":["agradece","agradeça","agradeçamos","agradecei","agradeçam"],"imp_neg":["agradeças","agradeça","agradeçamos","agradeçais","agradeçam"],"inf_pessoal":["agradecer","agradeceres","agradecer","agradecermos","agradecerdes","agradecerem"],"formas_np":["agradecer","agradecendo","agradecido"]}},
+{"inf":"almoçar","group":"regular","f":{"pres_ind":["almoço","almoças","almoça","almoçamos","almoçais","almoçam"],"pretperf_ind":["almocei","almoçaste","almoçou","almoçamos","almoçastes","almoçaram"],"pretimp_ind":["almoçava","almoçavas","almoçava","almoçávamos","almoçáveis","almoçavam"],"futpres_ind":["almoçarei","almoçarás","almoçará","almoçaremos","almoçareis","almoçarão"],"futpret_ind":["almoçaria","almoçarias","almoçaria","almoçaríamos","almoçaríeis","almoçariam"],"pres_subj":["almoce","almoces","almoce","almocemos","almoceis","almocem"],"pretimp_subj":["almoçasse","almoçasses","almoçasse","almoçássemos","almoçásseis","almoçassem"],"fut_subj":["almoçar","almoçares","almoçar","almoçarmos","almoçardes","almoçarem"],"imp_af":["almoça","almoce","almocemos","almoçai","almocem"],"imp_neg":["almoces","almoce","almocemos","almoceis","almocem"],"inf_pessoal":["almoçar","almoçares","almoçar","almoçarmos","almoçardes","almoçarem"],"formas_np":["almoçar","almoçando","almoçado"]}},
+{"inf":"alugar","group":"regular","f":{"pres_ind":["alugo","alugas","aluga","alugamos","alugais","alugam"],"pretperf_ind":["aluguei","alugaste","alugou","alugamos","alugastes","alugaram"],"pretimp_ind":["alugava","alugavas","alugava","alugávamos","alugáveis","alugavam"],"futpres_ind":["alugarei","alugarás","alugará","alugaremos","alugareis","alugarão"],"futpret_ind":["alugaria","alugarias","alugaria","alugaríamos","alugaríeis","alugariam"],"pres_subj":["alugue","alugues","alugue","aluguemos","alugueis","aluguem"],"pretimp_subj":["alugasse","alugasses","alugasse","alugássemos","alugásseis","alugassem"],"fut_subj":["alugar","alugares","alugar","alugarmos","alugardes","alugarem"],"imp_af":["aluga","alugue","aluguemos","alugai","aluguem"],"imp_neg":["alugues","alugue","aluguemos","alugueis","aluguem"],"inf_pessoal":["alugar","alugares","alugar","alugarmos","alugardes","alugarem"],"formas_np":["alugar","alugando","alugado"]}},
+{"inf":"andar","group":"regular","f":{"pres_ind":["ando","andas","anda","andamos","andais","andam"],"pretperf_ind":["andei","andaste","andou","andamos","andastes","andaram"],"pretimp_ind":["andava","andavas","andava","andávamos","andáveis","andavam"],"futpres_ind":["andarei","andarás","andará","andaremos","andareis","andarão"],"futpret_ind":["andaria","andarias","andaria","andaríamos","andaríeis","andariam"],"pres_subj":["ande","andes","ande","andemos","andeis","andem"],"pretimp_subj":["andasse","andasses","andasse","andássemos","andásseis","andassem"],"fut_subj":["andar","andares","andar","andarmos","andardes","andarem"],"imp_af":["anda","ande","andemos","andai","andem"],"imp_neg":["andes","ande","andemos","andeis","andem"],"inf_pessoal":["andar","andares","andar","andarmos","andardes","andarem"],"formas_np":["andar","andando","andado"]}},
+{"inf":"aprender","group":"regular","f":{"pres_ind":["aprendo","aprendes","aprende","aprendemos","aprendeis","aprendem"],"pretperf_ind":["aprendi","aprendeste","aprendeu","aprendemos","aprendestes","aprenderam"],"pretimp_ind":["aprendia","aprendias","aprendia","aprendíamos","aprendíeis","aprendiam"],"futpres_ind":["aprenderei","aprenderás","aprenderá","aprenderemos","aprendereis","aprenderão"],"futpret_ind":["aprenderia","aprenderias","aprenderia","aprenderíamos","aprenderíeis","aprenderiam"],"pres_subj":["aprenda","aprendas","aprenda","aprendamos","aprendais","aprendam"],"pretimp_subj":["aprendesse","aprendesses","aprendesse","aprendêssemos","aprendêsseis","aprendessem"],"fut_subj":["aprender","aprenderes","aprender","aprendermos","aprenderdes","aprenderem"],"imp_af":["aprende","aprenda","aprendamos","aprendei","aprendam"],"imp_neg":["aprendas","aprenda","aprendamos","aprendais","aprendam"],"inf_pessoal":["aprender","aprenderes","aprender","aprendermos","aprenderdes","aprenderem"],"formas_np":["aprender","aprendendo","aprendido"]}},
+{"inf":"beber","group":"regular","f":{"pres_ind":["bebo","bebes","bebe","bebemos","bebeis","bebem"],"pretperf_ind":["bebi","bebeste","bebeu","bebemos","bebestes","beberam"],"pretimp_ind":["bebia","bebias","bebia","bebíamos","bebíeis","bebiam"],"futpres_ind":["beberei","beberás","beberá","beberemos","bebereis","beberão"],"futpret_ind":["beberia","beberias","beberia","beberíamos","beberíeis","beberiam"],"pres_subj":["beba","bebas","beba","bebamos","bebais","bebam"],"pretimp_subj":["bebesse","bebesses","bebesse","bebêssemos","bebêsseis","bebessem"],"fut_subj":["beber","beberes","beber","bebermos","beberdes","beberem"],"imp_af":["bebe","beba","bebamos","bebei","bebam"],"imp_neg":["bebas","beba","bebamos","bebais","bebam"],"inf_pessoal":["beber","beberes","beber","bebermos","beberdes","beberem"],"formas_np":["beber","bebendo","bebido"]}},
+{"inf":"brincar","group":"regular","f":{"pres_ind":["brinco","brincas","brinca","brincamos","brincais","brincam"],"pretperf_ind":["brinquei","brincaste","brincou","brincamos","brincastes","brincaram"],"pretimp_ind":["brincava","brincavas","brincava","brincávamos","brincáveis","brincavam"],"futpres_ind":["brincarei","brincarás","brincará","brincaremos","brincareis","brincarão"],"futpret_ind":["brincaria","brincarias","brincaria","brincaríamos","brincaríeis","brincariam"],"pres_subj":["brinque","brinques","brinque","brinquemos","brinqueis","brinquem"],"pretimp_subj":["brincasse","brincasses","brincasse","brincássemos","brincásseis","brincassem"],"fut_subj":["brincar","brincares","brincar","brincarmos","brincardes","brincarem"],"imp_af":["brinca","brinque","brinquemos","brincai","brinquem"],"imp_neg":["brinques","brinque","brinquemos","brinqueis","brinquem"],"inf_pessoal":["brincar","brincares","brincar","brincarmos","brincardes","brincarem"],"formas_np":["brincar","brincando","brincado"]}},
+{"inf":"chegar","group":"regular","f":{"pres_ind":["chego","chegas","chega","chegamos","chegais","chegam"],"pretperf_ind":["cheguei","chegaste","chegou","chegamos","chegastes","chegaram"],"pretimp_ind":["chegava","chegavas","chegava","chegávamos","chegáveis","chegavam"],"futpres_ind":["chegarei","chegarás","chegará","chegaremos","chegareis","chegarão"],"futpret_ind":["chegaria","chegarias","chegaria","chegaríamos","chegaríeis","chegariam"],"pres_subj":["chegue","chegues","chegue","cheguemos","chegueis","cheguem"],"pretimp_subj":["chegasse","chegasses","chegasse","chegássemos","chegásseis","chegassem"],"fut_subj":["chegar","chegares","chegar","chegarmos","chegardes","chegarem"],"imp_af":["chega","chegue","cheguemos","chegai","cheguem"],"imp_neg":["chegues","chegue","cheguemos","chegueis","cheguem"],"inf_pessoal":["chegar","chegares","chegar","chegarmos","chegardes","chegarem"],"formas_np":["chegar","chegando","chegado"]}},
+{"inf":"comer","group":"regular","f":{"pres_ind":["como","comes","come","comemos","comeis","comem"],"pretperf_ind":["comi","comeste","comeu","comemos","comestes","comeram"],"pretimp_ind":["comia","comias","comia","comíamos","comíeis","comiam"],"futpres_ind":["comerei","comerás","comerá","comeremos","comereis","comerão"],"futpret_ind":["comeria","comerias","comeria","comeríamos","comeríeis","comeriam"],"pres_subj":["coma","comas","coma","comamos","comais","comam"],"pretimp_subj":["comesse","comesses","comesse","comêssemos","comêsseis","comessem"],"fut_subj":["comer","comeres","comer","comermos","comerdes","comerem"],"imp_af":["come","coma","comamos","comei","comam"],"imp_neg":["comas","coma","comamos","comais","comam"],"inf_pessoal":["comer","comeres","comer","comermos","comerdes","comerem"],"formas_np":["comer","comendo","comido"]}},
+{"inf":"começar","group":"regular","f":{"pres_ind":["começo","começas","começa","começamos","começais","começam"],"pretperf_ind":["comecei","começaste","começou","começamos","começastes","começaram"],"pretimp_ind":["começava","começavas","começava","começávamos","começáveis","começavam"],"futpres_ind":["começarei","começarás","começará","começaremos","começareis","começarão"],"futpret_ind":["começaria","começarias","começaria","começaríamos","começaríeis","começariam"],"pres_subj":["comece","comeces","comece","comecemos","comeceis","comecem"],"pretimp_subj":["começasse","começasses","começasse","começássemos","começásseis","começassem"],"fut_subj":["começar","começares","começar","começarmos","começardes","começarem"],"imp_af":["começa","comece","comecemos","começai","comecem"],"imp_neg":["comeces","comece","comecemos","comeceis","comecem"],"inf_pessoal":["começar","começares","começar","começarmos","começardes","começarem"],"formas_np":["começar","começando","começado"]}},
+{"inf":"comprar","group":"regular","f":{"pres_ind":["compro","compras","compra","compramos","comprais","compram"],"pretperf_ind":["comprei","compraste","comprou","compramos","comprastes","compraram"],"pretimp_ind":["comprava","compravas","comprava","comprávamos","compráveis","compravam"],"futpres_ind":["comprarei","comprarás","comprará","compraremos","comprareis","comprarão"],"futpret_ind":["compraria","comprarias","compraria","compraríamos","compraríeis","comprariam"],"pres_subj":["compre","compres","compre","compremos","compreis","comprem"],"pretimp_subj":["comprasse","comprasses","comprasse","comprássemos","comprásseis","comprassem"],"fut_subj":["comprar","comprares","comprar","comprarmos","comprardes","comprarem"],"imp_af":["compra","compre","compremos","comprai","comprem"],"imp_neg":["compres","compre","compremos","compreis","comprem"],"inf_pessoal":["comprar","comprares","comprar","comprarmos","comprardes","comprarem"],"formas_np":["comprar","comprando","comprado"]}},
+{"inf":"conhecer","group":"regular","f":{"pres_ind":["conheço","conheces","conhece","conhecemos","conheceis","conhecem"],"pretperf_ind":["conheci","conheceste","conheceu","conhecemos","conhecestes","conheceram"],"pretimp_ind":["conhecia","conhecias","conhecia","conhecíamos","conhecíeis","conheciam"],"futpres_ind":["conhecerei","conhecerás","conhecerá","conheceremos","conhecereis","conhecerão"],"futpret_ind":["conheceria","conhecerias","conheceria","conheceríamos","conheceríeis","conheceriam"],"pres_subj":["conheça","conheças","conheça","conheçamos","conheçais","conheçam"],"pretimp_subj":["conhecesse","conhecesses","conhecesse","conhecêssemos","conhecêsseis","conhecessem"],"fut_subj":["conhecer","conheceres","conhecer","conhecermos","conhecerdes","conhecerem"],"imp_af":["conhece","conheça","conheçamos","conhecei","conheçam"],"imp_neg":["conheças","conheça","conheçamos","conheçais","conheçam"],"inf_pessoal":["conhecer","conheceres","conhecer","conhecermos","conhecerdes","conhecerem"],"formas_np":["conhecer","conhecendo","conhecido"]}},
+{"inf":"correr","group":"regular","f":{"pres_ind":["corro","corres","corre","corremos","correis","correm"],"pretperf_ind":["corri","correste","correu","corremos","correstes","correram"],"pretimp_ind":["corria","corrias","corria","corríamos","corríeis","corriam"],"futpres_ind":["correrei","correrás","correrá","correremos","correreis","correrão"],"futpret_ind":["correria","correrias","correria","correríamos","correríeis","correriam"],"pres_subj":["corra","corras","corra","corramos","corrais","corram"],"pretimp_subj":["corresse","corresses","corresse","corrêssemos","corrêsseis","corressem"],"fut_subj":["correr","correres","correr","corrermos","correrdes","correrem"],"imp_af":["corre","corra","corramos","correi","corram"],"imp_neg":["corras","corra","corramos","corrais","corram"],"inf_pessoal":["correr","correres","correr","corrermos","correrdes","correrem"],"formas_np":["correr","correndo","corrido"]}},
+{"inf":"dançar","group":"regular","f":{"pres_ind":["danço","danças","dança","dançamos","dançais","dançam"],"pretperf_ind":["dancei","dançaste","dançou","dançamos","dançastes","dançaram"],"pretimp_ind":["dançava","dançavas","dançava","dançávamos","dançáveis","dançavam"],"futpres_ind":["dançarei","dançarás","dançará","dançaremos","dançareis","dançarão"],"futpret_ind":["dançaria","dançarias","dançaria","dançaríamos","dançaríeis","dançariam"],"pres_subj":["dance","dances","dance","dancemos","danceis","dancem"],"pretimp_subj":["dançasse","dançasses","dançasse","dançássemos","dançásseis","dançassem"],"fut_subj":["dançar","dançares","dançar","dançarmos","dançardes","dançarem"],"imp_af":["dança","dance","dancemos","dançai","dancem"],"imp_neg":["dances","dance","dancemos","danceis","dancem"],"inf_pessoal":["dançar","dançares","dançar","dançarmos","dançardes","dançarem"],"formas_np":["dançar","dançando","dançado"]}},
+{"inf":"dar","group":"irregular","f":{"pres_ind":["dou","dás","dá","damos","dais","dão"],"pretperf_ind":["dei","deste","deu","demos","destes","deram"],"pretimp_ind":["dava","davas","dava","dávamos","dáveis","davam"],"futpres_ind":["darei","darás","dará","daremos","dareis","darão"],"futpret_ind":["daria","darias","daria","daríamos","daríeis","dariam"],"pres_subj":["dê","dês","dê","demos","deis","deem"],"pretimp_subj":["desse","desses","desse","dêssemos","dêsseis","dessem"],"fut_subj":["der","deres","der","dermos","derdes","derem"],"imp_af":["dá","dê","demos","dai","deem"],"imp_neg":["dês","dê","demos","deis","deem"],"inf_pessoal":["dar","dares","dar","darmos","dardes","darem"],"formas_np":["dar","dando","dado"]}},
+{"inf":"decidir","group":"regular","f":{"pres_ind":["decido","decides","decide","decidimos","decidis","decidem"],"pretperf_ind":["decidi","decidiste","decidiu","decidimos","decidistes","decidiram"],"pretimp_ind":["decidia","decidias","decidia","decidíamos","decidíeis","decidiam"],"futpres_ind":["decidirei","decidirás","decidirá","decidiremos","decidireis","decidirão"],"futpret_ind":["decidiria","decidirias","decidiria","decidiríamos","decidiríeis","decidiriam"],"pres_subj":["decida","decidas","decida","decidamos","decidais","decidam"],"pretimp_subj":["decidisse","decidisses","decidisse","decidíssemos","decidísseis","decidissem"],"fut_subj":["decidir","decidires","decidir","decidirmos","decidirdes","decidirem"],"imp_af":["decide","decida","decidamos","decidi","decidam"],"imp_neg":["decidas","decida","decidamos","decidais","decidam"],"inf_pessoal":["decidir","decidires","decidir","decidirmos","decidirdes","decidirem"],"formas_np":["decidir","decidindo","decidido"]}},
+{"inf":"dirigir","group":"regular","f":{"pres_ind":["dirijo","diriges","dirige","dirigimos","dirigis","dirigem"],"pretperf_ind":["dirigi","dirigiste","dirigiu","dirigimos","dirigistes","dirigiram"],"pretimp_ind":["dirigia","dirigias","dirigia","dirigíamos","dirigíeis","dirigiam"],"futpres_ind":["dirigirei","dirigirás","dirigirá","dirigiremos","dirigireis","dirigirão"],"futpret_ind":["dirigiria","dirigirias","dirigiria","dirigiríamos","dirigiríeis","dirigiriam"],"pres_subj":["dirija","dirijas","dirija","dirijamos","dirijais","dirijam"],"pretimp_subj":["dirigisse","dirigisses","dirigisse","dirigíssemos","dirigísseis","dirigissem"],"fut_subj":["dirigir","dirigires","dirigir","dirigirmos","dirigirdes","dirigirem"],"imp_af":["dirige","dirija","dirijamos","dirigi","dirijam"],"imp_neg":["dirijas","dirija","dirijamos","dirijais","dirijam"],"inf_pessoal":["dirigir","dirigires","dirigir","dirigirmos","dirigirdes","dirigirem"],"formas_np":["dirigir","dirigindo","dirigido"]}},
+{"inf":"discutir","group":"regular","f":{"pres_ind":["discuto","discutes","discute","discutimos","discutis","discutem"],"pretperf_ind":["discuti","discutiste","discutiu","discutimos","discutistes","discutiram"],"pretimp_ind":["discutia","discutias","discutia","discutíamos","discutíeis","discutiam"],"futpres_ind":["discutirei","discutirás","discutirá","discutiremos","discutireis","discutirão"],"futpret_ind":["discutiria","discutirias","discutiria","discutiríamos","discutiríeis","discutiriam"],"pres_subj":["discuta","discutas","discuta","discutamos","discutais","discutam"],"pretimp_subj":["discutisse","discutisses","discutisse","discutíssemos","discutísseis","discutissem"],"fut_subj":["discutir","discutires","discutir","discutirmos","discutirdes","discutirem"],"imp_af":["discute","discuta","discutamos","discuti","discutam"],"imp_neg":["discutas","discuta","discutamos","discutais","discutam"],"inf_pessoal":["discutir","discutires","discutir","discutirmos","discutirdes","discutirem"],"formas_np":["discutir","discutindo","discutido"]}},
+{"inf":"dividir","group":"regular","f":{"pres_ind":["divido","divides","divide","dividimos","dividis","dividem"],"pretperf_ind":["dividi","dividiste","dividiu","dividimos","dividistes","dividiram"],"pretimp_ind":["dividia","dividias","dividia","dividíamos","dividíeis","dividiam"],"futpres_ind":["dividirei","dividirás","dividirá","dividiremos","dividireis","dividirão"],"futpret_ind":["dividiria","dividirias","dividiria","dividiríamos","dividiríeis","dividiriam"],"pres_subj":["divida","dividas","divida","dividamos","dividais","dividam"],"pretimp_subj":["dividisse","dividisses","dividisse","dividíssemos","dividísseis","dividissem"],"fut_subj":["dividir","dividires","dividir","dividirmos","dividirdes","dividirem"],"imp_af":["divide","divida","dividamos","dividi","dividam"],"imp_neg":["dividas","divida","dividamos","dividais","dividam"],"inf_pessoal":["dividir","dividires","dividir","dividirmos","dividirdes","dividirem"],"formas_np":["dividir","dividindo","dividido"]}},
+{"inf":"dizer","group":"irregular","f":{"pres_ind":["digo","dizes","diz","dizemos","dizeis","dizem"],"pretperf_ind":["disse","disseste","disse","dissemos","dissestes","disseram"],"pretimp_ind":["dizia","dizias","dizia","dizíamos","dizíeis","diziam"],"futpres_ind":["direi","dirás","dirá","diremos","direis","dirão"],"futpret_ind":["diria","dirias","diria","diríamos","diríeis","diriam"],"pres_subj":["diga","digas","diga","digamos","digais","digam"],"pretimp_subj":["dissesse","dissesses","dissesse","dissêssemos","dissêsseis","dissessem"],"fut_subj":["disser","disseres","disser","dissermos","disserdes","disserem"],"imp_af":["diz","diga","digamos","dizei","digam"],"imp_neg":["digas","diga","digamos","digais","digam"],"inf_pessoal":["dizer","dizeres","dizer","dizermos","dizerdes","dizerem"],"formas_np":["dizer","dizendo","dito"]}},
+{"inf":"dormir","group":"irregular","f":{"pres_ind":["durmo","dormes","dorme","dormimos","dormis","dormem"],"pretperf_ind":["dormi","dormiste","dormiu","dormimos","dormistes","dormiram"],"pretimp_ind":["dormia","dormias","dormia","dormíamos","dormíeis","dormiam"],"futpres_ind":["dormirei","dormirás","dormirá","dormiremos","dormireis","dormirão"],"futpret_ind":["dormiria","dormirias","dormiria","dormiríamos","dormiríeis","dormiriam"],"pres_subj":["durma","durmas","durma","durmamos","durmais","durmam"],"pretimp_subj":["dormisse","dormisses","dormisse","dormíssemos","dormísseis","dormissem"],"fut_subj":["dormir","dormires","dormir","dormirmos","dormirdes","dormirem"],"imp_af":["dorme","durma","durmamos","dormi","durmam"],"imp_neg":["durmas","durma","durmamos","durmais","durmam"],"inf_pessoal":["dormir","dormires","dormir","dormirmos","dormirdes","dormirem"],"formas_np":["dormir","dormindo","dormido"]}},
+{"inf":"eleger","group":"regular","f":{"pres_ind":["elejo","eleges","elege","elegemos","elegeis","elegem"],"pretperf_ind":["elegi","elegeste","elegeu","elegemos","elegestes","elegeram"],"pretimp_ind":["elegia","elegias","elegia","elegíamos","elegíeis","elegiam"],"futpres_ind":["elegerei","elegerás","elegerá","elegeremos","elegereis","elegerão"],"futpret_ind":["elegeria","elegerias","elegeria","elegeríamos","elegeríeis","elegeriam"],"pres_subj":["eleja","elejas","eleja","elejamos","elejais","elejam"],"pretimp_subj":["elegesse","elegesses","elegesse","elegêssemos","elegêsseis","elegessem"],"fut_subj":["eleger","elegeres","eleger","elegermos","elegerdes","elegerem"],"imp_af":["elege","eleja","elejamos","elegei","elejam"],"imp_neg":["elejas","eleja","elejamos","elejais","elejam"],"inf_pessoal":["eleger","elegeres","eleger","elegermos","elegerdes","elegerem"],"formas_np":["eleger","elegendo","elegido"]}},
+{"inf":"escrever","group":"regular","f":{"pres_ind":["escrevo","escreves","escreve","escrevemos","escreveis","escrevem"],"pretperf_ind":["escrevi","escreveste","escreveu","escrevemos","escrevestes","escreveram"],"pretimp_ind":["escrevia","escrevias","escrevia","escrevíamos","escrevíeis","escreviam"],"futpres_ind":["escreverei","escreverás","escreverá","escreveremos","escrevereis","escreverão"],"futpret_ind":["escreveria","escreverias","escreveria","escreveríamos","escreveríeis","escreveriam"],"pres_subj":["escreva","escrevas","escreva","escrevamos","escrevais","escrevam"],"pretimp_subj":["escrevesse","escrevesses","escrevesse","escrevêssemos","escrevêsseis","escrevessem"],"fut_subj":["escrever","escreveres","escrever","escrevermos","escreverdes","escreverem"],"imp_af":["escreve","escreva","escrevamos","escrevei","escrevam"],"imp_neg":["escrevas","escreva","escrevamos","escrevais","escrevam"],"inf_pessoal":["escrever","escreveres","escrever","escrevermos","escreverdes","escreverem"],"formas_np":["escrever","escrevendo","escrito"]}},
+{"inf":"estar","group":"irregular","f":{"pres_ind":["estou","estás","está","estamos","estais","estão"],"pretperf_ind":["estive","estiveste","esteve","estivemos","estivestes","estiveram"],"pretimp_ind":["estava","estavas","estava","estávamos","estáveis","estavam"],"futpres_ind":["estarei","estarás","estará","estaremos","estareis","estarão"],"futpret_ind":["estaria","estarias","estaria","estaríamos","estaríeis","estariam"],"pres_subj":["esteja","estejas","esteja","estejamos","estejais","estejam"],"pretimp_subj":["estivesse","estivesses","estivesse","estivêssemos","estivêsseis","estivessem"],"fut_subj":["estiver","estiveres","estiver","estivermos","estiverdes","estiverem"],"imp_af":["está","esteja","estejamos","estai","estejam"],"imp_neg":["estejas","esteja","estejamos","estejais","estejam"],"inf_pessoal":["estar","estares","estar","estarmos","estardes","estarem"],"formas_np":["estar","estando","estado"]}},
+{"inf":"estudar","group":"regular","f":{"pres_ind":["estudo","estudas","estuda","estudamos","estudais","estudam"],"pretperf_ind":["estudei","estudaste","estudou","estudamos","estudastes","estudaram"],"pretimp_ind":["estudava","estudavas","estudava","estudávamos","estudáveis","estudavam"],"futpres_ind":["estudarei","estudarás","estudará","estudaremos","estudareis","estudarão"],"futpret_ind":["estudaria","estudarias","estudaria","estudaríamos","estudaríeis","estudariam"],"pres_subj":["estude","estudes","estude","estudemos","estudeis","estudem"],"pretimp_subj":["estudasse","estudasses","estudasse","estudássemos","estudásseis","estudassem"],"fut_subj":["estudar","estudares","estudar","estudarmos","estudardes","estudarem"],"imp_af":["estuda","estude","estudemos","estudai","estudem"],"imp_neg":["estudes","estude","estudemos","estudeis","estudem"],"inf_pessoal":["estudar","estudares","estudar","estudarmos","estudardes","estudarem"],"formas_np":["estudar","estudando","estudado"]}},
+{"inf":"exigir","group":"regular","f":{"pres_ind":["exijo","exiges","exige","exigimos","exigis","exigem"],"pretperf_ind":["exigi","exigiste","exigiu","exigimos","exigistes","exigiram"],"pretimp_ind":["exigia","exigias","exigia","exigíamos","exigíeis","exigiam"],"futpres_ind":["exigirei","exigirás","exigirá","exigiremos","exigireis","exigirão"],"futpret_ind":["exigiria","exigirias","exigiria","exigiríamos","exigiríeis","exigiriam"],"pres_subj":["exija","exijas","exija","exijamos","exijais","exijam"],"pretimp_subj":["exigisse","exigisses","exigisse","exigíssemos","exigísseis","exigissem"],"fut_subj":["exigir","exigires","exigir","exigirmos","exigirdes","exigirem"],"imp_af":["exige","exija","exijamos","exigi","exijam"],"imp_neg":["exijas","exija","exijamos","exijais","exijam"],"inf_pessoal":["exigir","exigires","exigir","exigirmos","exigirdes","exigirem"],"formas_np":["exigir","exigindo","exigido"]}},
+{"inf":"explicar","group":"regular","f":{"pres_ind":["explico","explicas","explica","explicamos","explicais","explicam"],"pretperf_ind":["expliquei","explicaste","explicou","explicamos","explicastes","explicaram"],"pretimp_ind":["explicava","explicavas","explicava","explicávamos","explicáveis","explicavam"],"futpres_ind":["explicarei","explicarás","explicará","explicaremos","explicareis","explicarão"],"futpret_ind":["explicaria","explicarias","explicaria","explicaríamos","explicaríeis","explicariam"],"pres_subj":["explique","expliques","explique","expliquemos","expliqueis","expliquem"],"pretimp_subj":["explicasse","explicasses","explicasse","explicássemos","explicásseis","explicassem"],"fut_subj":["explicar","explicares","explicar","explicarmos","explicardes","explicarem"],"imp_af":["explica","explique","expliquemos","explicai","expliquem"],"imp_neg":["expliques","explique","expliquemos","expliqueis","expliquem"],"inf_pessoal":["explicar","explicares","explicar","explicarmos","explicardes","explicarem"],"formas_np":["explicar","explicando","explicado"]}},
+{"inf":"falar","group":"regular","f":{"pres_ind":["falo","falas","fala","falamos","falais","falam"],"pretperf_ind":["falei","falaste","falou","falamos","falastes","falaram"],"pretimp_ind":["falava","falavas","falava","falávamos","faláveis","falavam"],"futpres_ind":["falarei","falarás","falará","falaremos","falareis","falarão"],"futpret_ind":["falaria","falarias","falaria","falaríamos","falaríeis","falariam"],"pres_subj":["fale","fales","fale","falemos","faleis","falem"],"pretimp_subj":["falasse","falasses","falasse","falássemos","falásseis","falassem"],"fut_subj":["falar","falares","falar","falarmos","falardes","falarem"],"imp_af":["fala","fale","falemos","falai","falem"],"imp_neg":["fales","fale","falemos","faleis","falem"],"inf_pessoal":["falar","falares","falar","falarmos","falardes","falarem"],"formas_np":["falar","falando","falado"]}},
+{"inf":"fazer","group":"irregular","f":{"pres_ind":["faço","fazes","faz","fazemos","fazeis","fazem"],"pretperf_ind":["fiz","fizeste","fez","fizemos","fizestes","fizeram"],"pretimp_ind":["fazia","fazias","fazia","fazíamos","fazíeis","faziam"],"futpres_ind":["farei","farás","fará","faremos","fareis","farão"],"futpret_ind":["faria","farias","faria","faríamos","faríeis","fariam"],"pres_subj":["faça","faças","faça","façamos","façais","façam"],"pretimp_subj":["fizesse","fizesses","fizesse","fizêssemos","fizêsseis","fizessem"],"fut_subj":["fizer","fizeres","fizer","fizermos","fizerdes","fizerem"],"imp_af":["faz","faça","façamos","fazei","façam"],"imp_neg":["faças","faça","façamos","façais","façam"],"inf_pessoal":["fazer","fazeres","fazer","fazermos","fazerdes","fazerem"],"formas_np":["fazer","fazendo","feito"]}},
+{"inf":"ficar","group":"regular","f":{"pres_ind":["fico","ficas","fica","ficamos","ficais","ficam"],"pretperf_ind":["fiquei","ficaste","ficou","ficamos","ficastes","ficaram"],"pretimp_ind":["ficava","ficavas","ficava","ficávamos","ficáveis","ficavam"],"futpres_ind":["ficarei","ficarás","ficará","ficaremos","ficareis","ficarão"],"futpret_ind":["ficaria","ficarias","ficaria","ficaríamos","ficaríeis","ficariam"],"pres_subj":["fique","fiques","fique","fiquemos","fiqueis","fiquem"],"pretimp_subj":["ficasse","ficasses","ficasse","ficássemos","ficásseis","ficassem"],"fut_subj":["ficar","ficares","ficar","ficarmos","ficardes","ficarem"],"imp_af":["fica","fique","fiquemos","ficai","fiquem"],"imp_neg":["fiques","fique","fiquemos","fiqueis","fiquem"],"inf_pessoal":["ficar","ficares","ficar","ficarmos","ficardes","ficarem"],"formas_np":["ficar","ficando","ficado"]}},
+{"inf":"fingir","group":"regular","f":{"pres_ind":["finjo","finges","finge","fingimos","fingis","fingem"],"pretperf_ind":["fingi","fingiste","fingiu","fingimos","fingistes","fingiram"],"pretimp_ind":["fingia","fingias","fingia","fingíamos","fingíeis","fingiam"],"futpres_ind":["fingirei","fingirás","fingirá","fingiremos","fingireis","fingirão"],"futpret_ind":["fingiria","fingirias","fingiria","fingiríamos","fingiríeis","fingiriam"],"pres_subj":["finja","finjas","finja","finjamos","finjais","finjam"],"pretimp_subj":["fingisse","fingisses","fingisse","fingíssemos","fingísseis","fingissem"],"fut_subj":["fingir","fingires","fingir","fingirmos","fingirdes","fingirem"],"imp_af":["finge","finja","finjamos","fingi","finjam"],"imp_neg":["finjas","finja","finjamos","finjais","finjam"],"inf_pessoal":["fingir","fingires","fingir","fingirmos","fingirdes","fingirem"],"formas_np":["fingir","fingindo","fingido"]}},
+{"inf":"ganhar","group":"regular","f":{"pres_ind":["ganho","ganhas","ganha","ganhamos","ganhais","ganham"],"pretperf_ind":["ganhei","ganhaste","ganhou","ganhamos","ganhastes","ganharam"],"pretimp_ind":["ganhava","ganhavas","ganhava","ganhávamos","ganháveis","ganhavam"],"futpres_ind":["ganharei","ganharás","ganhará","ganharemos","ganhareis","ganharão"],"futpret_ind":["ganharia","ganharias","ganharia","ganharíamos","ganharíeis","ganhariam"],"pres_subj":["ganhe","ganhes","ganhe","ganhemos","ganheis","ganhem"],"pretimp_subj":["ganhasse","ganhasses","ganhasse","ganhássemos","ganhásseis","ganhassem"],"fut_subj":["ganhar","ganhares","ganhar","ganharmos","ganhardes","ganharem"],"imp_af":["ganha","ganhe","ganhemos","ganhai","ganhem"],"imp_neg":["ganhes","ganhe","ganhemos","ganheis","ganhem"],"inf_pessoal":["ganhar","ganhares","ganhar","ganharmos","ganhardes","ganharem"],"formas_np":["ganhar","ganhando","ganho"]}},
+{"inf":"gostar","group":"regular","f":{"pres_ind":["gosto","gostas","gosta","gostamos","gostais","gostam"],"pretperf_ind":["gostei","gostaste","gostou","gostamos","gostastes","gostaram"],"pretimp_ind":["gostava","gostavas","gostava","gostávamos","gostáveis","gostavam"],"futpres_ind":["gostarei","gostarás","gostará","gostaremos","gostareis","gostarão"],"futpret_ind":["gostaria","gostarias","gostaria","gostaríamos","gostaríeis","gostariam"],"pres_subj":["goste","gostes","goste","gostemos","gosteis","gostem"],"pretimp_subj":["gostasse","gostasses","gostasse","gostássemos","gostásseis","gostassem"],"fut_subj":["gostar","gostares","gostar","gostarmos","gostardes","gostarem"],"imp_af":["gosta","goste","gostemos","gostai","gostem"],"imp_neg":["gostes","goste","gostemos","gosteis","gostem"],"inf_pessoal":["gostar","gostares","gostar","gostarmos","gostardes","gostarem"],"formas_np":["gostar","gostando","gostado"]}},
+{"inf":"haver","group":"irregular","f":{"pres_ind":["hei","hás","há","havemos","haveis","hão"],"pretperf_ind":["houve","houveste","houve","houvemos","houvestes","houveram"],"pretimp_ind":["havia","havias","havia","havíamos","havíeis","haviam"],"futpres_ind":["haverei","haverás","haverá","haveremos","havereis","haverão"],"futpret_ind":["haveria","haverias","haveria","haveríamos","haveríeis","haveriam"],"pres_subj":["haja","hajas","haja","hajamos","hajais","hajam"],"pretimp_subj":["houvesse","houvesses","houvesse","houvêssemos","houvêsseis","houvessem"],"fut_subj":["houver","houveres","houver","houvermos","houverdes","houverem"],"imp_af":["há","haja","hajamos","havei","hajam"],"imp_neg":["hajas","haja","hajamos","hajais","hajam"],"inf_pessoal":["haver","haveres","haver","havermos","haverdes","haverem"],"formas_np":["haver","havendo","havido"]}},
+{"inf":"ir","group":"irregular","f":{"pres_ind":["vou","vais","vai","vamos","ides","vão"],"pretperf_ind":["fui","foste","foi","fomos","fostes","foram"],"pretimp_ind":["ia","ias","ia","íamos","íeis","iam"],"futpres_ind":["irei","irás","irá","iremos","ireis","irão"],"futpret_ind":["iria","irias","iria","iríamos","iríeis","iriam"],"pres_subj":["vá","vás","vá","vamos","vades","vão"],"pretimp_subj":["fosse","fosses","fosse","fôssemos","fôsseis","fossem"],"fut_subj":["for","fores","for","formos","fordes","forem"],"imp_af":["vai","vá","vamos","ide","vão"],"imp_neg":["vás","vá","vamos","vades","vão"],"inf_pessoal":["ir","ires","ir","irmos","irdes","irem"],"formas_np":["ir","indo","ido"]}},
+{"inf":"jogar","group":"regular","f":{"pres_ind":["jogo","jogas","joga","jogamos","jogais","jogam"],"pretperf_ind":["joguei","jogaste","jogou","jogamos","jogastes","jogaram"],"pretimp_ind":["jogava","jogavas","jogava","jogávamos","jogáveis","jogavam"],"futpres_ind":["jogarei","jogarás","jogará","jogaremos","jogareis","jogarão"],"futpret_ind":["jogaria","jogarias","jogaria","jogaríamos","jogaríeis","jogariam"],"pres_subj":["jogue","jogues","jogue","joguemos","jogueis","joguem"],"pretimp_subj":["jogasse","jogasses","jogasse","jogássemos","jogásseis","jogassem"],"fut_subj":["jogar","jogares","jogar","jogarmos","jogardes","jogarem"],"imp_af":["joga","jogue","joguemos","jogai","joguem"],"imp_neg":["jogues","jogue","joguemos","jogueis","joguem"],"inf_pessoal":["jogar","jogares","jogar","jogarmos","jogardes","jogarem"],"formas_np":["jogar","jogando","jogado"]}},
+{"inf":"ler","group":"irregular","f":{"pres_ind":["leio","lês","lê","lemos","ledes","leem"],"pretperf_ind":["li","leste","leu","lemos","lestes","leram"],"pretimp_ind":["lia","lias","lia","líamos","líeis","liam"],"futpres_ind":["lerei","lerás","lerá","leremos","lereis","lerão"],"futpret_ind":["leria","lerias","leria","leríamos","leríeis","leriam"],"pres_subj":["leia","leias","leia","leiamos","leiais","leiam"],"pretimp_subj":["lesse","lesses","lesse","lêssemos","lêsseis","lessem"],"fut_subj":["ler","leres","ler","lermos","lerdes","lerem"],"imp_af":["lê","leia","leiamos","lede","leiam"],"imp_neg":["leias","leia","leiamos","leiais","leiam"],"inf_pessoal":["ler","leres","ler","lermos","lerdes","lerem"],"formas_np":["ler","lendo","lido"]}},
+{"inf":"marcar","group":"regular","f":{"pres_ind":["marco","marcas","marca","marcamos","marcais","marcam"],"pretperf_ind":["marquei","marcaste","marcou","marcamos","marcastes","marcaram"],"pretimp_ind":["marcava","marcavas","marcava","marcávamos","marcáveis","marcavam"],"futpres_ind":["marcarei","marcarás","marcará","marcaremos","marcareis","marcarão"],"futpret_ind":["marcaria","marcarias","marcaria","marcaríamos","marcaríeis","marcariam"],"pres_subj":["marque","marques","marque","marquemos","marqueis","marquem"],"pretimp_subj":["marcasse","marcasses","marcasse","marcássemos","marcásseis","marcassem"],"fut_subj":["marcar","marcares","marcar","marcarmos","marcardes","marcarem"],"imp_af":["marca","marque","marquemos","marcai","marquem"],"imp_neg":["marques","marque","marquemos","marqueis","marquem"],"inf_pessoal":["marcar","marcares","marcar","marcarmos","marcardes","marcarem"],"formas_np":["marcar","marcando","marcado"]}},
+{"inf":"morar","group":"regular","f":{"pres_ind":["moro","moras","mora","moramos","morais","moram"],"pretperf_ind":["morei","moraste","morou","moramos","morastes","moraram"],"pretimp_ind":["morava","moravas","morava","morávamos","moráveis","moravam"],"futpres_ind":["morarei","morarás","morará","moraremos","morareis","morarão"],"futpret_ind":["moraria","morarias","moraria","moraríamos","moraríeis","morariam"],"pres_subj":["more","mores","more","moremos","moreis","morem"],"pretimp_subj":["morasse","morasses","morasse","morássemos","morásseis","morassem"],"fut_subj":["morar","morares","morar","morarmos","morardes","morarem"],"imp_af":["mora","more","moremos","morai","morem"],"imp_neg":["mores","more","moremos","moreis","morem"],"inf_pessoal":["morar","morares","morar","morarmos","morardes","morarem"],"formas_np":["morar","morando","morado"]}},
+{"inf":"nascer","group":"regular","f":{"pres_ind":["nasço","nasces","nasce","nascemos","nasceis","nascem"],"pretperf_ind":["nasci","nasceste","nasceu","nascemos","nascestes","nasceram"],"pretimp_ind":["nascia","nascias","nascia","nascíamos","nascíeis","nasciam"],"futpres_ind":["nascerei","nascerás","nascerá","nasceremos","nascereis","nascerão"],"futpret_ind":["nasceria","nascerias","nasceria","nasceríamos","nasceríeis","nasceriam"],"pres_subj":["nasça","nasças","nasça","nasçamos","nasçais","nasçam"],"pretimp_subj":["nascesse","nascesses","nascesse","nascêssemos","nascêsseis","nascessem"],"fut_subj":["nascer","nasceres","nascer","nascermos","nascerdes","nascerem"],"imp_af":["nasce","nasça","nasçamos","nascei","nasçam"],"imp_neg":["nasças","nasça","nasçamos","nasçais","nasçam"],"inf_pessoal":["nascer","nasceres","nascer","nascermos","nascerdes","nascerem"],"formas_np":["nascer","nascendo","nascido"]}},
+{"inf":"ouvir","group":"irregular","f":{"pres_ind":["ouço","ouves","ouve","ouvimos","ouvis","ouvem"],"pretperf_ind":["ouvi","ouviste","ouviu","ouvimos","ouvistes","ouviram"],"pretimp_ind":["ouvia","ouvias","ouvia","ouvíamos","ouvíeis","ouviam"],"futpres_ind":["ouvirei","ouvirás","ouvirá","ouviremos","ouvireis","ouvirão"],"futpret_ind":["ouviria","ouvirias","ouviria","ouviríamos","ouviríeis","ouviriam"],"pres_subj":["ouça","ouças","ouça","ouçamos","ouçais","ouçam"],"pretimp_subj":["ouvisse","ouvisses","ouvisse","ouvíssemos","ouvísseis","ouvissem"],"fut_subj":["ouvir","ouvires","ouvir","ouvirmos","ouvirdes","ouvirem"],"imp_af":["ouve","ouça","ouçamos","ouvi","ouçam"],"imp_neg":["ouças","ouça","ouçamos","ouçais","ouçam"],"inf_pessoal":["ouvir","ouvires","ouvir","ouvirmos","ouvirdes","ouvirem"],"formas_np":["ouvir","ouvindo","ouvido"]}},
+{"inf":"pagar","group":"regular","f":{"pres_ind":["pago","pagas","paga","pagamos","pagais","pagam"],"pretperf_ind":["paguei","pagaste","pagou","pagamos","pagastes","pagaram"],"pretimp_ind":["pagava","pagavas","pagava","pagávamos","pagáveis","pagavam"],"futpres_ind":["pagarei","pagarás","pagará","pagaremos","pagareis","pagarão"],"futpret_ind":["pagaria","pagarias","pagaria","pagaríamos","pagaríeis","pagariam"],"pres_subj":["pague","pagues","pague","paguemos","pagueis","paguem"],"pretimp_subj":["pagasse","pagasses","pagasse","pagássemos","pagásseis","pagassem"],"fut_subj":["pagar","pagares","pagar","pagarmos","pagardes","pagarem"],"imp_af":["paga","pague","paguemos","pagai","paguem"],"imp_neg":["pagues","pague","paguemos","pagueis","paguem"],"inf_pessoal":["pagar","pagares","pagar","pagarmos","pagardes","pagarem"],"formas_np":["pagar","pagando","pago"]}},
+{"inf":"parecer","group":"regular","f":{"pres_ind":["pareço","pareces","parece","parecemos","pareceis","parecem"],"pretperf_ind":["pareci","pareceste","pareceu","parecemos","parecestes","pareceram"],"pretimp_ind":["parecia","parecias","parecia","parecíamos","parecíeis","pareciam"],"futpres_ind":["parecerei","parecerás","parecerá","pareceremos","parecereis","parecerão"],"futpret_ind":["pareceria","parecerias","pareceria","pareceríamos","pareceríeis","pareceriam"],"pres_subj":["pareça","pareças","pareça","pareçamos","pareçais","pareçam"],"pretimp_subj":["parecesse","parecesses","parecesse","parecêssemos","parecêsseis","parecessem"],"fut_subj":["parecer","pareceres","parecer","parecermos","parecerdes","parecerem"],"imp_af":["parece","pareça","pareçamos","parecei","pareçam"],"imp_neg":["pareças","pareça","pareçamos","pareçais","pareçam"],"inf_pessoal":["parecer","pareceres","parecer","parecermos","parecerdes","parecerem"],"formas_np":["parecer","parecendo","parecido"]}},
+{"inf":"partir","group":"regular","f":{"pres_ind":["parto","partes","parte","partimos","partis","partem"],"pretperf_ind":["parti","partiste","partiu","partimos","partistes","partiram"],"pretimp_ind":["partia","partias","partia","partíamos","partíeis","partiam"],"futpres_ind":["partirei","partirás","partirá","partiremos","partireis","partirão"],"futpret_ind":["partiria","partirias","partiria","partiríamos","partiríeis","partiriam"],"pres_subj":["parta","partas","parta","partamos","partais","partam"],"pretimp_subj":["partisse","partisses","partisse","partíssemos","partísseis","partissem"],"fut_subj":["partir","partires","partir","partirmos","partirdes","partirem"],"imp_af":["parte","parta","partamos","parti","partam"],"imp_neg":["partas","parta","partamos","partais","partam"],"inf_pessoal":["partir","partires","partir","partirmos","partirdes","partirem"],"formas_np":["partir","partindo","partido"]}},
+{"inf":"pedir","group":"irregular","f":{"pres_ind":["peço","pedes","pede","pedimos","pedis","pedem"],"pretperf_ind":["pedi","pediste","pediu","pedimos","pedistes","pediram"],"pretimp_ind":["pedia","pedias","pedia","pedíamos","pedíeis","pediam"],"futpres_ind":["pedirei","pedirás","pedirá","pediremos","pedireis","pedirão"],"futpret_ind":["pediria","pedirias","pediria","pediríamos","pediríeis","pediriam"],"pres_subj":["peça","peças","peça","peçamos","peçais","peçam"],"pretimp_subj":["pedisse","pedisses","pedisse","pedíssemos","pedísseis","pedissem"],"fut_subj":["pedir","pedires","pedir","pedirmos","pedirdes","pedirem"],"imp_af":["pede","peça","peçamos","pedi","peçam"],"imp_neg":["peças","peça","peçamos","peçais","peçam"],"inf_pessoal":["pedir","pedires","pedir","pedirmos","pedirdes","pedirem"],"formas_np":["pedir","pedindo","pedido"]}},
+{"inf":"permitir","group":"regular","f":{"pres_ind":["permito","permites","permite","permitimos","permitis","permitem"],"pretperf_ind":["permiti","permitiste","permitiu","permitimos","permitistes","permitiram"],"pretimp_ind":["permitia","permitias","permitia","permitíamos","permitíeis","permitiam"],"futpres_ind":["permitirei","permitirás","permitirá","permitiremos","permitireis","permitirão"],"futpret_ind":["permitiria","permitirias","permitiria","permitiríamos","permitiríeis","permitiriam"],"pres_subj":["permita","permitas","permita","permitamos","permitais","permitam"],"pretimp_subj":["permitisse","permitisses","permitisse","permitíssemos","permitísseis","permitissem"],"fut_subj":["permitir","permitires","permitir","permitirmos","permitirdes","permitirem"],"imp_af":["permite","permita","permitamos","permiti","permitam"],"imp_neg":["permitas","permita","permitamos","permitais","permitam"],"inf_pessoal":["permitir","permitires","permitir","permitirmos","permitirdes","permitirem"],"formas_np":["permitir","permitindo","permitido"]}},
+{"inf":"poder","group":"irregular","f":{"pres_ind":["posso","podes","pode","podemos","podeis","podem"],"pretperf_ind":["pude","pudeste","pôde","pudemos","pudestes","puderam"],"pretimp_ind":["podia","podias","podia","podíamos","podíeis","podiam"],"futpres_ind":["poderei","poderás","poderá","poderemos","podereis","poderão"],"futpret_ind":["poderia","poderias","poderia","poderíamos","poderíeis","poderiam"],"pres_subj":["possa","possas","possa","possamos","possais","possam"],"pretimp_subj":["pudesse","pudesses","pudesse","pudêssemos","pudêsseis","pudessem"],"fut_subj":["puder","puderes","puder","pudermos","puderdes","puderem"],"imp_af":["pode","possa","possamos","podei","possam"],"imp_neg":["possas","possa","possamos","possais","possam"],"inf_pessoal":["poder","poderes","poder","podermos","poderdes","poderem"],"formas_np":["poder","podendo","podido"]}},
+{"inf":"praticar","group":"regular","f":{"pres_ind":["pratico","praticas","pratica","praticamos","praticais","praticam"],"pretperf_ind":["pratiquei","praticaste","praticou","praticamos","praticastes","praticaram"],"pretimp_ind":["praticava","praticavas","praticava","praticávamos","praticáveis","praticavam"],"futpres_ind":["praticarei","praticarás","praticará","praticaremos","praticareis","praticarão"],"futpret_ind":["praticaria","praticarias","praticaria","praticaríamos","praticaríeis","praticariam"],"pres_subj":["pratique","pratiques","pratique","pratiquemos","pratiqueis","pratiquem"],"pretimp_subj":["praticasse","praticasses","praticasse","praticássemos","praticásseis","praticassem"],"fut_subj":["praticar","praticares","praticar","praticarmos","praticardes","praticarem"],"imp_af":["pratica","pratique","pratiquemos","praticai","pratiquem"],"imp_neg":["pratiques","pratique","pratiquemos","pratiqueis","pratiquem"],"inf_pessoal":["praticar","praticares","praticar","praticarmos","praticardes","praticarem"],"formas_np":["praticar","praticando","praticado"]}},
+{"inf":"proteger","group":"regular","f":{"pres_ind":["protejo","proteges","protege","protegemos","protegeis","protegem"],"pretperf_ind":["protegi","protegeste","protegeu","protegemos","protegestes","protegeram"],"pretimp_ind":["protegia","protegias","protegia","protegíamos","protegíeis","protegiam"],"futpres_ind":["protegerei","protegerás","protegerá","protegeremos","protegereis","protegerão"],"futpret_ind":["protegeria","protegerias","protegeria","protegeríamos","protegeríeis","protegeriam"],"pres_subj":["proteja","protejas","proteja","protejamos","protejais","protejam"],"pretimp_subj":["protegesse","protegesses","protegesse","protegêssemos","protegêsseis","protegessem"],"fut_subj":["proteger","protegeres","proteger","protegermos","protegerdes","protegerem"],"imp_af":["protege","proteja","protejamos","protegei","protejam"],"imp_neg":["protejas","proteja","protejamos","protejais","protejam"],"inf_pessoal":["proteger","protegeres","proteger","protegermos","protegerdes","protegerem"],"formas_np":["proteger","protegendo","protegido"]}},
+{"inf":"pôr","group":"irregular","f":{"pres_ind":["ponho","pões","põe","pomos","pondes","põem"],"pretperf_ind":["pus","puseste","pôs","pusemos","pusestes","puseram"],"pretimp_ind":["punha","punhas","punha","púnhamos","púnheis","punham"],"futpres_ind":["porei","porás","porá","poremos","poreis","porão"],"futpret_ind":["poria","porias","poria","poríamos","poríeis","poriam"],"pres_subj":["ponha","ponhas","ponha","ponhamos","ponhais","ponham"],"pretimp_subj":["pusesse","pusesses","pusesse","pusêssemos","pusêsseis","pusessem"],"fut_subj":["puser","puseres","puser","pusermos","puserdes","puserem"],"imp_af":["põe","ponha","ponhamos","ponde","ponham"],"imp_neg":["ponhas","ponha","ponhamos","ponhais","ponham"],"inf_pessoal":["por","pores","por","pormos","pordes","porem"],"formas_np":["pôr","pondo","posto"]}},
+{"inf":"querer","group":"irregular","f":{"pres_ind":["quero","queres","quer","queremos","quereis","querem"],"pretperf_ind":["quis","quiseste","quis","quisemos","quisestes","quiseram"],"pretimp_ind":["queria","querias","queria","queríamos","queríeis","queriam"],"futpres_ind":["quererei","quererás","quererá","quereremos","querereis","quererão"],"futpret_ind":["quereria","quererias","quereria","quereríamos","quereríeis","quereriam"],"pres_subj":["queira","queiras","queira","queiramos","queirais","queiram"],"pretimp_subj":["quisesse","quisesses","quisesse","quisêssemos","quisêsseis","quisessem"],"fut_subj":["quiser","quiseres","quiser","quisermos","quiserdes","quiserem"],"imp_af":["quere","queira","queiramos","querei","queiram"],"imp_neg":["queiras","queira","queiramos","queirais","queiram"],"inf_pessoal":["querer","quereres","querer","querermos","quererdes","quererem"],"formas_np":["querer","querendo","querido"]}},
+{"inf":"saber","group":"irregular","f":{"pres_ind":["sei","sabes","sabe","sabemos","sabeis","sabem"],"pretperf_ind":["soube","soubeste","soube","soubemos","soubestes","souberam"],"pretimp_ind":["sabia","sabias","sabia","sabíamos","sabíeis","sabiam"],"futpres_ind":["saberei","saberás","saberá","saberemos","sabereis","saberão"],"futpret_ind":["saberia","saberias","saberia","saberíamos","saberíeis","saberiam"],"pres_subj":["saiba","saibas","saiba","saibamos","saibais","saibam"],"pretimp_subj":["soubesse","soubesses","soubesse","soubêssemos","soubêsseis","soubessem"],"fut_subj":["souber","souberes","souber","soubermos","souberdes","souberem"],"imp_af":["sabe","saiba","saibamos","sabei","saibam"],"imp_neg":["saibas","saiba","saibamos","saibais","saibam"],"inf_pessoal":["saber","saberes","saber","sabermos","saberdes","saberem"],"formas_np":["saber","sabendo","sabido"]}},
+{"inf":"sair","group":"irregular","f":{"pres_ind":["saio","sais","sai","saímos","saís","saem"],"pretperf_ind":["saí","saíste","saiu","saímos","saístes","saíram"],"pretimp_ind":["saía","saías","saía","saíamos","saíeis","saíam"],"futpres_ind":["sairei","sairás","sairá","sairemos","saireis","sairão"],"futpret_ind":["sairia","sairias","sairia","sairíamos","sairíeis","sairiam"],"pres_subj":["saia","saias","saia","saiamos","saiais","saiam"],"pretimp_subj":["saísse","saísses","saísse","saíssemos","saísseis","saíssem"],"fut_subj":["saír","saíres","saír","saírmos","saírdes","saírem"],"imp_af":["sai","saia","saiamos","saí","saiam"],"imp_neg":["saias","saia","saiamos","saiais","saiam"],"inf_pessoal":["sair","saires","sair","sairmos","sairdes","sairem"],"formas_np":["sair","saindo","saído"]}},
+{"inf":"seguir","group":"irregular","f":{"pres_ind":["sigo","segues","segue","seguimos","seguis","seguem"],"pretperf_ind":["segui","seguiste","seguiu","seguimos","seguistes","seguiram"],"pretimp_ind":["seguia","seguias","seguia","seguíamos","seguíeis","seguiam"],"futpres_ind":["seguirei","seguirás","seguirá","seguiremos","seguireis","seguirão"],"futpret_ind":["seguiria","seguirias","seguiria","seguiríamos","seguiríeis","seguiriam"],"pres_subj":["siga","sigas","siga","sigamos","sigais","sigam"],"pretimp_subj":["seguisse","seguisses","seguisse","seguíssemos","seguísseis","seguissem"],"fut_subj":["seguir","seguires","seguir","seguirmos","seguirdes","seguirem"],"imp_af":["segue","siga","sigamos","segui","sigam"],"imp_neg":["sigas","siga","sigamos","sigais","sigam"],"inf_pessoal":["seguir","seguires","seguir","seguirmos","seguirdes","seguirem"],"formas_np":["seguir","seguindo","seguido"]}},
+{"inf":"sentir","group":"irregular","f":{"pres_ind":["sinto","sentes","sente","sentimos","sentis","sentem"],"pretperf_ind":["senti","sentiste","sentiu","sentimos","sentistes","sentiram"],"pretimp_ind":["sentia","sentias","sentia","sentíamos","sentíeis","sentiam"],"futpres_ind":["sentirei","sentirás","sentirá","sentiremos","sentireis","sentirão"],"futpret_ind":["sentiria","sentirias","sentiria","sentiríamos","sentiríeis","sentiriam"],"pres_subj":["sinta","sintas","sinta","sintamos","sintais","sintam"],"pretimp_subj":["sentisse","sentisses","sentisse","sentíssemos","sentísseis","sentissem"],"fut_subj":["sentir","sentires","sentir","sentirmos","sentirdes","sentirem"],"imp_af":["sente","sinta","sintamos","senti","sintam"],"imp_neg":["sintas","sinta","sintamos","sintais","sintam"],"inf_pessoal":["sentir","sentires","sentir","sentirmos","sentirdes","sentirem"],"formas_np":["sentir","sentindo","sentido"]}},
+{"inf":"ser","group":"irregular","f":{"pres_ind":["sou","és","é","somos","sois","são"],"pretperf_ind":["fui","foste","foi","fomos","fostes","foram"],"pretimp_ind":["era","eras","era","éramos","éreis","eram"],"futpres_ind":["serei","serás","será","seremos","sereis","serão"],"futpret_ind":["seria","serias","seria","seríamos","seríeis","seriam"],"pres_subj":["seja","sejas","seja","sejamos","sejais","sejam"],"pretimp_subj":["fosse","fosses","fosse","fôssemos","fôsseis","fossem"],"fut_subj":["for","fores","for","formos","fordes","forem"],"imp_af":["sê","seja","sejamos","sede","sejam"],"imp_neg":["sejas","seja","sejamos","sejais","sejam"],"inf_pessoal":["ser","seres","ser","sermos","serdes","serem"],"formas_np":["ser","sendo","sido"]}},
+{"inf":"ter","group":"irregular","f":{"pres_ind":["tenho","tens","tem","temos","tendes","têm"],"pretperf_ind":["tive","tiveste","teve","tivemos","tivestes","tiveram"],"pretimp_ind":["tinha","tinhas","tinha","tínhamos","tínheis","tinham"],"futpres_ind":["terei","terás","terá","teremos","tereis","terão"],"futpret_ind":["teria","terias","teria","teríamos","teríeis","teriam"],"pres_subj":["tenha","tenhas","tenha","tenhamos","tenhais","tenham"],"pretimp_subj":["tivesse","tivesses","tivesse","tivêssemos","tivêsseis","tivessem"],"fut_subj":["tiver","tiveres","tiver","tivermos","tiverdes","tiverem"],"imp_af":["tem","tenha","tenhamos","tende","tenham"],"imp_neg":["tenhas","tenha","tenhamos","tenhais","tenham"],"inf_pessoal":["ter","teres","ter","termos","terdes","terem"],"formas_np":["ter","tendo","tido"]}},
+{"inf":"tocar","group":"regular","f":{"pres_ind":["toco","tocas","toca","tocamos","tocais","tocam"],"pretperf_ind":["toquei","tocaste","tocou","tocamos","tocastes","tocaram"],"pretimp_ind":["tocava","tocavas","tocava","tocávamos","tocáveis","tocavam"],"futpres_ind":["tocarei","tocarás","tocará","tocaremos","tocareis","tocarão"],"futpret_ind":["tocaria","tocarias","tocaria","tocaríamos","tocaríeis","tocariam"],"pres_subj":["toque","toques","toque","toquemos","toqueis","toquem"],"pretimp_subj":["tocasse","tocasses","tocasse","tocássemos","tocásseis","tocassem"],"fut_subj":["tocar","tocares","tocar","tocarmos","tocardes","tocarem"],"imp_af":["toca","toque","toquemos","tocai","toquem"],"imp_neg":["toques","toque","toquemos","toqueis","toquem"],"inf_pessoal":["tocar","tocares","tocar","tocarmos","tocardes","tocarem"],"formas_np":["tocar","tocando","tocado"]}},
+{"inf":"trabalhar","group":"regular","f":{"pres_ind":["trabalho","trabalhas","trabalha","trabalhamos","trabalhais","trabalham"],"pretperf_ind":["trabalhei","trabalhaste","trabalhou","trabalhamos","trabalhastes","trabalharam"],"pretimp_ind":["trabalhava","trabalhavas","trabalhava","trabalhávamos","trabalháveis","trabalhavam"],"futpres_ind":["trabalharei","trabalharás","trabalhará","trabalharemos","trabalhareis","trabalharão"],"futpret_ind":["trabalharia","trabalharias","trabalharia","trabalharíamos","trabalharíeis","trabalhariam"],"pres_subj":["trabalhe","trabalhes","trabalhe","trabalhemos","trabalheis","trabalhem"],"pretimp_subj":["trabalhasse","trabalhasses","trabalhasse","trabalhássemos","trabalhásseis","trabalhassem"],"fut_subj":["trabalhar","trabalhares","trabalhar","trabalharmos","trabalhardes","trabalharem"],"imp_af":["trabalha","trabalhe","trabalhemos","trabalhai","trabalhem"],"imp_neg":["trabalhes","trabalhe","trabalhemos","trabalheis","trabalhem"],"inf_pessoal":["trabalhar","trabalhares","trabalhar","trabalharmos","trabalhardes","trabalharem"],"formas_np":["trabalhar","trabalhando","trabalhado"]}},
+{"inf":"trazer","group":"irregular","f":{"pres_ind":["trago","trazes","traz","trazemos","trazeis","trazem"],"pretperf_ind":["trouxe","trouxeste","trouxe","trouxemos","trouxestes","trouxeram"],"pretimp_ind":["trazia","trazias","trazia","trazíamos","trazíeis","traziam"],"futpres_ind":["trarei","trarás","trará","traremos","trareis","trarão"],"futpret_ind":["traria","trarias","traria","traríamos","traríeis","trariam"],"pres_subj":["traga","tragas","traga","tragamos","tragais","tragam"],"pretimp_subj":["trouxesse","trouxesses","trouxesse","trouxêssemos","trouxêsseis","trouxessem"],"fut_subj":["trouxer","trouxeres","trouxer","trouxermos","trouxerdes","trouxerem"],"imp_af":["traz","traga","tragamos","trazei","tragam"],"imp_neg":["tragas","traga","tragamos","tragais","tragam"],"inf_pessoal":["trazer","trazeres","trazer","trazermos","trazerdes","trazerem"],"formas_np":["trazer","trazendo","trazido"]}},
+{"inf":"vender","group":"regular","f":{"pres_ind":["vendo","vendes","vende","vendemos","vendeis","vendem"],"pretperf_ind":["vendi","vendeste","vendeu","vendemos","vendestes","venderam"],"pretimp_ind":["vendia","vendias","vendia","vendíamos","vendíeis","vendiam"],"futpres_ind":["venderei","venderás","venderá","venderemos","vendereis","venderão"],"futpret_ind":["venderia","venderias","venderia","venderíamos","venderíeis","venderiam"],"pres_subj":["venda","vendas","venda","vendamos","vendais","vendam"],"pretimp_subj":["vendesse","vendesses","vendesse","vendêssemos","vendêsseis","vendessem"],"fut_subj":["vender","venderes","vender","vendermos","venderdes","venderem"],"imp_af":["vende","venda","vendamos","vendei","vendam"],"imp_neg":["vendas","venda","vendamos","vendais","vendam"],"inf_pessoal":["vender","venderes","vender","vendermos","venderdes","venderem"],"formas_np":["vender","vendendo","vendido"]}},
+{"inf":"ver","group":"irregular","f":{"pres_ind":["vejo","vês","vê","vemos","vedes","veem"],"pretperf_ind":["vi","viste","viu","vimos","vistes","viram"],"pretimp_ind":["via","vias","via","víamos","víeis","viam"],"futpres_ind":["verei","verás","verá","veremos","vereis","verão"],"futpret_ind":["veria","verias","veria","veríamos","veríeis","veriam"],"pres_subj":["veja","vejas","veja","vejamos","vejais","vejam"],"pretimp_subj":["visse","visses","visse","víssemos","vísseis","vissem"],"fut_subj":["vir","vires","vir","virmos","virdes","virem"],"imp_af":["vê","veja","vejamos","vede","vejam"],"imp_neg":["vejas","veja","vejamos","vejais","vejam"],"inf_pessoal":["ver","veres","ver","vermos","verdes","verem"],"formas_np":["ver","vendo","visto"]}},
+{"inf":"vir","group":"irregular","f":{"pres_ind":["venho","vens","vem","vimos","vindes","vêm"],"pretperf_ind":["vim","vieste","veio","viemos","viestes","vieram"],"pretimp_ind":["vinha","vinhas","vinha","vínhamos","vínheis","vinham"],"futpres_ind":["virei","virás","virá","viremos","vireis","virão"],"futpret_ind":["viria","virias","viria","viríamos","viríeis","viriam"],"pres_subj":["venha","venhas","venha","venhamos","venhais","venham"],"pretimp_subj":["viesse","viesses","viesse","viêssemos","viêsseis","viessem"],"fut_subj":["vier","vieres","vier","viermos","vierdes","vierem"],"imp_af":["vem","venha","venhamos","vinde","venham"],"imp_neg":["venhas","venha","venhamos","venhais","venham"],"inf_pessoal":["vir","vires","vir","virmos","virdes","virem"],"formas_np":["vir","vindo","vindo"]}}
+];
+const PERSONS_6 = ['eu','tu','ele / você','nós','vós','eles / vocês'];
+const PERSONS_IMP = ['tu','você','nós','vós','vocês'];
+
+const BLOCKS_META = [
+  {key:'pres_ind', tense:'Presente', mood:'Indicativo', persons:PERSONS_6, offset:0},
+  {key:'pretperf_ind', tense:'Pretérito Perfeito', mood:'Indicativo', persons:PERSONS_6, offset:0},
+  {key:'pretimp_ind', tense:'Pretérito Imperfeito', mood:'Indicativo', persons:PERSONS_6, offset:0},
+  {key:'futpres_ind', tense:'Futuro do Presente', mood:'Indicativo', persons:PERSONS_6, offset:0},
+  {key:'futpret_ind', tense:'Futuro do Pretérito (Condicional)', mood:'Indicativo', persons:PERSONS_6, offset:0},
+  {key:'pres_subj', tense:'Presente', mood:'Subjuntivo', persons:PERSONS_6, offset:0},
+  {key:'pretimp_subj', tense:'Pretérito Imperfeito', mood:'Subjuntivo', persons:PERSONS_6, offset:0},
+  {key:'fut_subj', tense:'Futuro', mood:'Subjuntivo', persons:PERSONS_6, offset:0},
+  {key:'imp_af', tense:'Afirmativo', mood:'Imperativo', persons:PERSONS_IMP, offset:0},
+  {key:'imp_neg', tense:'Negativo', mood:'Imperativo', persons:PERSONS_IMP, offset:0},
+  {key:'inf_pessoal', tense:'Infinitivo Pessoal', mood:'Formas Nominais', persons:PERSONS_6, offset:0},
+  {key:'formas_np', tense:'Gerúndio e Particípio', mood:'Formas Nominais', persons:['gerúndio','particípio'], offset:1},
+];
+const MOOD_ORDER = ['Indicativo','Subjuntivo','Imperativo','Formas Nominais'];
+
+const LS_PROGRESS_KEY = 'ptverbs_progress';
+const LS_SETTINGS_KEY = 'ptverbs_settings';
+
+let progress = {};       // cardKey -> 'known' | 'learning'
+let deck = [];
+let deckPos = 0;
+let mode = 'cards';
+let currentBlockKey = 'pres_ind'; // or 'review'
+let verbFilter = 'all';  // 'all' | 'regular' | 'irregular'
+let direction = 'producir'; // 'producir' | 'reconocer' (cards mode)
+let quiz = { queue: [], pos: 0, score: 0, total: 0, answered: false };
+let storageAvailable = true;
+
+function blockMeta(key){ return BLOCKS_META.find(b => b.key === key); }
+function cardKey(c){ return c.blockKey + '|' + c.verbInf + '|' + c.personIdx; }
+function filteredVerbs(){ return verbFilter === 'all' ? VERBS : VERBS.filter(v => v.group === verbFilter); }
+function shuffleArr(arr){
+  for(let i=arr.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [arr[i],arr[j]]=[arr[j],arr[i]]; }
+  return arr;
+}
+function sizeClassFor(text){
+  if(text.length > 16) return 'long';
+  if(text.length > 10) return 'mid';
+  return '';
+}
+
+/* Progress/settings persisted with localStorage: works fully offline once the
+   file is downloaded, nothing is sent anywhere. */
+function loadProgress(){
+  try{ const raw = localStorage.getItem(LS_PROGRESS_KEY); if(raw) progress = JSON.parse(raw); }
+  catch(e){ storageAvailable = false; progress = {}; }
+}
+function saveProgress(){
+  try{ localStorage.setItem(LS_PROGRESS_KEY, JSON.stringify(progress)); }
+  catch(e){ storageAvailable = false; }
+}
+function loadSettings(){
+  try{
+    const raw = localStorage.getItem(LS_SETTINGS_KEY);
+    if(raw){
+      const s = JSON.parse(raw);
+      if(s.verbFilter === 'all' || s.verbFilter === 'regular' || s.verbFilter === 'irregular') verbFilter = s.verbFilter;
+      if(s.direction === 'producir' || s.direction === 'reconocer') direction = s.direction;
+    }
+  }catch(e){ storageAvailable = false; }
+}
+function saveSettings(){
+  try{ localStorage.setItem(LS_SETTINGS_KEY, JSON.stringify({verbFilter, direction})); }
+  catch(e){ storageAvailable = false; }
+}
+
+/* ---------------- DECK BUILDING ---------------- */
+function buildDeckForBlock(blockKey){
+  const meta = blockMeta(blockKey);
+  const cards = [];
+  filteredVerbs().forEach(v => {
+    meta.persons.forEach((p, idx) => {
+      cards.push({ blockKey, verbInf: v.inf, group: v.group, personIdx: idx, form: v.f[blockKey][idx + meta.offset] });
+    });
+  });
+  return cards;
+}
+function buildDeckForBlockAllVerbs(blockKey){
+  const meta = blockMeta(blockKey);
+  const cards = [];
+  VERBS.forEach(v => {
+    meta.persons.forEach((p, idx) => {
+      cards.push({ blockKey, verbInf: v.inf, group: v.group, personIdx: idx, form: v.f[blockKey][idx + meta.offset] });
+    });
+  });
+  return cards;
+}
+function buildReviewDeck(){
+  const cards = [];
+  Object.keys(progress).forEach(key => {
+    if(progress[key] !== 'learning') return;
+    const [blockKey, verbInf, personIdxStr] = key.split('|');
+    const meta = blockMeta(blockKey);
+    const v = VERBS.find(vv => vv.inf === verbInf);
+    if(!meta || !v) return;
+    const personIdx = parseInt(personIdxStr, 10);
+    cards.push({ blockKey, verbInf: v.inf, group: v.group, personIdx, form: v.f[blockKey][personIdx + meta.offset] });
+  });
+  return cards;
+}
+function loadDeck(){
+  deck = currentBlockKey === 'review' ? buildReviewDeck() : buildDeckForBlock(currentBlockKey);
+  deckPos = 0;
+}
+
+function countKnownInBlock(blockKey){
+  const prefix = blockKey + '|';
+  return Object.keys(progress).filter(k => k.startsWith(prefix) && progress[k] === 'known').length;
+}
+
+/* ---------------- SIDEBAR ---------------- */
+function renderSidebar(){
+  const knownTotal = Object.values(progress).filter(s => s === 'known').length;
+  const learningTotal = Object.values(progress).filter(s => s === 'learning').length;
+  document.getElementById('statKnown').textContent = knownTotal;
+  document.getElementById('statLearning').textContent = learningTotal;
+  const totalPossible = BLOCKS_META.reduce((sum,b) => sum + VERBS.length*b.persons.length, 0);
+  document.getElementById('overallFill').style.width = Math.min(100, (knownTotal/totalPossible*100)) + '%';
+
+  const nav = document.getElementById('blockNav');
+  nav.innerHTML = '';
+  MOOD_ORDER.forEach(mood => {
+    const group = document.createElement('div');
+    group.className = 'mood-group';
+    const heading = document.createElement('div');
+    heading.className = 'mood-heading';
+    heading.textContent = mood;
+    group.appendChild(heading);
+    BLOCKS_META.filter(b => b.mood === mood).forEach(b => {
+      const total = VERBS.length * b.persons.length;
+      const known = countKnownInBlock(b.key);
+      const btn = document.createElement('button');
+      btn.className = 'block-tile' + (currentBlockKey === b.key ? ' active' : '');
+      btn.innerHTML = `<span class="block-num">${b.persons.length}p</span>
+        <span class="block-info">
+          <span class="block-range">${b.tense}</span><br>
+          <span class="block-count">${known} / ${total} dominadas</span>
+        </span>`;
+      btn.onclick = () => selectBlock(b.key);
+      group.appendChild(btn);
+    });
+    nav.appendChild(group);
+  });
+  const reviewBtn = document.createElement('button');
+  reviewBtn.className = 'block-tile review' + (currentBlockKey === 'review' ? ' active' : '');
+  reviewBtn.innerHTML = `<span class="block-num">★</span>
+    <span class="block-info">
+      <span class="block-range">Repaso general</span><br>
+      <span class="block-count">${learningTotal} marcadas "aún no"</span>
+    </span>`;
+  reviewBtn.onclick = () => selectBlock('review');
+  nav.appendChild(reviewBtn);
+}
+
+function selectBlock(key){
+  currentBlockKey = key;
+  if(mode === 'cards'){ loadDeck(); renderCardsView(); }
+  else { startQuiz(); }
+  renderSidebar();
+}
+
+/* ---------------- CARDS VIEW ---------------- */
+function blockLabel(){
+  if(currentBlockKey === 'review') return 'Repaso general';
+  const m = blockMeta(currentBlockKey);
+  return m.tense + ' · ' + m.mood;
+}
+
+function renderCardsView(){
+  document.getElementById('cardsView').hidden = false;
+  document.getElementById('quizView').hidden = true;
+  document.getElementById('topbarActions').style.display = 'flex';
+  document.getElementById('viewTitle').textContent = blockLabel();
+
+  if(deck.length === 0){
+    document.getElementById('viewSub').textContent = currentBlockKey === 'review'
+      ? 'No tienes formas pendientes de repaso ahora mismo.' : 'Este bloque está vacío.';
+    document.querySelector('.card-stage').style.display = 'none';
+    document.querySelector('.actions').style.display = 'none';
+    document.querySelector('.kbd-hint').style.display = 'none';
+    document.getElementById('miniGrid').innerHTML = currentBlockKey === 'review'
+      ? '<div class="empty-state"><h3>¡Todo al día!</h3><p>Marca formas como "Aún no la sé" en cualquier bloque y aparecerán aquí para repasarlas.</p></div>'
+      : '';
+    return;
+  }
+  document.querySelector('.card-stage').style.display = 'flex';
+  document.querySelector('.actions').style.display = 'flex';
+  document.querySelector('.kbd-hint').style.display = 'block';
+
+  updateSubStat();
+  renderCard();
+  renderMiniGrid();
+}
+
+function updateSubStat(){
+  const known = deck.filter(c => progress[cardKey(c)] === 'known').length;
+  document.getElementById('viewSub').textContent = `${known} / ${deck.length} dominadas en este bloque`;
+}
+
+function renderCard(){
+  const c = deck[deckPos];
+  document.getElementById('flashcard').classList.remove('flipped');
+  const meta = blockMeta(c.blockKey);
+  const tenseLabel = meta.tense + ' · ' + meta.mood;
+  const personLabel = meta.persons[c.personIdx];
+
+  ['groupTagFront','groupTagBack'].forEach(id => {
+    const el = document.getElementById(id);
+    el.textContent = c.group;
+    el.className = 'group-tag ' + c.group;
+  });
+  document.getElementById('tenseTagFront').textContent = tenseLabel;
+  document.getElementById('tenseTagBack').textContent = tenseLabel;
+
+  const wf = document.getElementById('wordFront');
+  const wb = document.getElementById('wordBack');
+
+  if(direction === 'producir'){
+    document.getElementById('frontLabel').textContent = 'Enunciado';
+    document.getElementById('backLabel').textContent = 'Forma conjugada';
+    wf.textContent = c.verbInf; wf.className = 'word ' + sizeClassFor(c.verbInf);
+    wb.textContent = c.form;    wb.className = 'word ' + sizeClassFor(c.form);
+    document.getElementById('personFront').textContent = personLabel;
+    document.getElementById('personBack').textContent = personLabel;
+  } else {
+    document.getElementById('frontLabel').textContent = 'Forma conjugada';
+    document.getElementById('backLabel').textContent = 'Enunciado';
+    wf.textContent = c.form;    wf.className = 'word ' + sizeClassFor(c.form);
+    wb.textContent = c.verbInf; wb.className = 'word ' + sizeClassFor(c.verbInf);
+    document.getElementById('personFront').textContent = '';
+    document.getElementById('personBack').textContent = personLabel;
+  }
+  highlightMiniGrid();
+}
+
+function renderMiniGrid(){
+  const grid = document.getElementById('miniGrid');
+  grid.innerHTML = '';
+  deck.forEach((c, idx) => {
+    const dot = document.createElement('button');
+    const status = progress[cardKey(c)];
+    dot.className = 'mini-dot' + (status ? ' '+status : '') + (idx===deckPos ? ' current' : '');
+    const meta = blockMeta(c.blockKey);
+    dot.title = c.verbInf + ' (' + meta.persons[c.personIdx] + ') → ' + c.form;
+    dot.onclick = () => { deckPos = idx; renderCard(); };
+    grid.appendChild(dot);
+  });
+}
+function highlightMiniGrid(){
+  document.querySelectorAll('.mini-dot').forEach((el, idx) => el.classList.toggle('current', idx===deckPos));
+}
+
+function flipCard(){ document.getElementById('flashcard').classList.toggle('flipped'); }
+function nextCard(){ if(!deck.length) return; deckPos = (deckPos+1) % deck.length; renderCard(); updateSubStat(); }
+function prevCard(){ if(!deck.length) return; deckPos = (deckPos-1+deck.length) % deck.length; renderCard(); updateSubStat(); }
+
+function markStatus(status){
+  if(!deck.length) return;
+  const c = deck[deckPos];
+  progress[cardKey(c)] = status;
+  saveProgress();
+  renderSidebar();
+  if(currentBlockKey === 'review' && status === 'known'){
+    deck.splice(deckPos,1);
+    if(deckPos >= deck.length) deckPos = 0;
+    renderCardsView();
+    return;
+  }
+  renderMiniGrid();
+  updateSubStat();
+  nextCard();
+}
+
+/* ---------------- QUIZ ---------------- */
+function normalizeAnswer(s){
+  return s.toLowerCase().trim().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,' ');
+}
+
+function startQuiz(){
+  const pool = currentBlockKey === 'review' ? buildReviewDeck() : buildDeckForBlock(currentBlockKey);
+  quiz.queue = shuffleArr([...pool]);
+  quiz.pos = 0; quiz.score = 0; quiz.total = 0; quiz.answered = false;
+  renderQuizView();
+}
+
+function renderQuizView(){
+  document.getElementById('cardsView').hidden = true;
+  document.getElementById('quizView').hidden = false;
+  document.getElementById('topbarActions').style.display = 'none';
+  document.getElementById('viewTitle').textContent = blockLabel() + ' · Modo test';
+  document.getElementById('viewSub').textContent = 'Preguntas al azar: opción múltiple o escritas, produciendo o reconociendo formas';
+
+  const existingEmpty = document.getElementById('quizEmpty');
+  if(existingEmpty) existingEmpty.remove();
+
+  if(quiz.queue.length === 0){
+    document.querySelector('.quiz-card').style.display = 'none';
+    document.getElementById('quizScore').textContent = '';
+    document.getElementById('quizNextBtn').hidden = true;
+    document.querySelector('#quizView').insertAdjacentHTML('beforeend',
+      currentBlockKey === 'review'
+      ? '<div class="empty-state" id="quizEmpty"><h3>¡Nada que repasar!</h3><p>No tienes formas marcadas como "aún no la sé" todavía.</p></div>'
+      : '<div class="empty-state" id="quizEmpty"><h3>Bloque vacío</h3></div>');
+    return;
+  }
+  document.querySelector('.quiz-card').style.display = 'block';
+  renderQuizQuestion();
+}
+
+function buildQuizOptions(correctCard, qdir){
+  const meta = blockMeta(correctCard.blockKey);
+  const pool = buildDeckForBlockAllVerbs(correctCard.blockKey);
+  const displayOf = (c) => qdir === 'producir' ? c.form : (c.verbInf + ' — ' + meta.persons[c.personIdx]);
+  const seen = new Set([displayOf(correctCard).toLowerCase()]);
+  const candidates = shuffleArr(pool.filter(c => !(c.verbInf === correctCard.verbInf && c.personIdx === correctCard.personIdx)));
+  const distractors = [];
+  for(const c of candidates){
+    const key = displayOf(c).toLowerCase();
+    if(seen.has(key)) continue;
+    seen.add(key);
+    distractors.push(c);
+    if(distractors.length === 3) break;
+  }
+  return shuffleArr([correctCard, ...distractors]);
+}
+
+function renderQuizQuestion(){
+  const c = quiz.queue[quiz.pos];
+  quiz.answered = false;
+  quiz.qtype = Math.random() < 0.5 ? 'choice' : 'type';
+  quiz.qdir = quiz.qtype === 'type' ? 'producir' : (Math.random() < 0.5 ? 'producir' : 'reconocer');
+
+  const meta = blockMeta(c.blockKey);
+  const personLabel = meta.persons[c.personIdx];
+  const tenseLabel = meta.tense + ' · ' + meta.mood;
+
+  document.getElementById('quizRank').textContent = c.group.toUpperCase();
+  const qw = document.getElementById('quizWord');
+
+  if(quiz.qdir === 'producir'){
+    document.getElementById('quizPromptLabel').textContent = 'Conjuga: ' + tenseLabel;
+    qw.textContent = c.verbInf; qw.className = 'quiz-word ' + sizeClassFor(c.verbInf);
+    document.getElementById('quizSub').textContent = 'Persona: ' + personLabel;
+    quiz.correctText = c.form;
+  } else {
+    document.getElementById('quizPromptLabel').textContent = '¿Qué verbo y persona es esta forma?';
+    qw.textContent = c.form; qw.className = 'quiz-word ' + sizeClassFor(c.form);
+    document.getElementById('quizSub').textContent = tenseLabel;
+    quiz.correctText = c.verbInf + ' — ' + personLabel;
+  }
+  quiz.correctKey = cardKey(c);
+  document.getElementById('quizScore').textContent = `Aciertos: ${quiz.score} / ${quiz.total}`;
+  document.getElementById('quizNextBtn').hidden = true;
+
+  const optionsEl = document.getElementById('quizOptions');
+  const typeArea = document.getElementById('quizTypeArea');
+
+  if(quiz.qtype === 'choice'){
+    optionsEl.style.display = 'grid';
+    typeArea.style.display = 'none';
+    const opts = buildQuizOptions(c, quiz.qdir);
+    optionsEl.innerHTML = '';
+    opts.forEach(opt => {
+      const btn = document.createElement('button');
+      btn.className = 'quiz-opt';
+      btn.textContent = quiz.qdir === 'producir' ? opt.form : (opt.verbInf + ' — ' + meta.persons[opt.personIdx]);
+      btn.onclick = () => answerChoice(opt, c, btn);
+      optionsEl.appendChild(btn);
+    });
+  } else {
+    optionsEl.style.display = 'none';
+    typeArea.style.display = 'flex';
+    const input = document.getElementById('quizInput');
+    input.value = ''; input.disabled = false; input.className = 'quiz-input';
+    document.getElementById('quizSubmitBtn').disabled = false;
+    const fb = document.getElementById('quizFeedback');
+    fb.textContent = ''; fb.className = 'quiz-feedback';
+    setTimeout(() => input.focus(), 30);
+  }
+}
+
+function finalizeAnswer(isCorrect, key){
+  quiz.total++;
+  if(isCorrect){ quiz.score++; progress[key] = 'known'; }
+  else { progress[key] = 'learning'; }
+  saveProgress();
+  renderSidebar();
+  document.getElementById('quizScore').textContent = `Aciertos: ${quiz.score} / ${quiz.total}`;
+  document.getElementById('quizNextBtn').hidden = false;
+}
+
+function answerChoice(selected, correct, btnEl){
+  if(quiz.answered) return;
+  quiz.answered = true;
+  const isCorrect = selected.verbInf === correct.verbInf && selected.personIdx === correct.personIdx && selected.blockKey === correct.blockKey;
+  const buttons = Array.from(document.querySelectorAll('.quiz-opt'));
+  buttons.forEach(b => b.disabled = true);
+  btnEl.classList.add(isCorrect ? 'correct' : 'incorrect');
+  if(!isCorrect){
+    const meta = blockMeta(correct.blockKey);
+    const correctDisplay = quiz.qdir === 'producir' ? correct.form : (correct.verbInf + ' — ' + meta.persons[correct.personIdx]);
+    buttons.forEach(b => { if(b.textContent === correctDisplay) b.classList.add('correct'); });
+  }
+  finalizeAnswer(isCorrect, quiz.correctKey);
+}
+
+function submitTypedAnswer(){
+  if(quiz.answered) return;
+  const input = document.getElementById('quizInput');
+  if(input.value.trim() === ''){ input.focus(); return; }
+  quiz.answered = true;
+  const isCorrect = normalizeAnswer(input.value) === normalizeAnswer(quiz.correctText);
+  input.disabled = true;
+  document.getElementById('quizSubmitBtn').disabled = true;
+  input.classList.add(isCorrect ? 'correct' : 'incorrect');
+  const fb = document.getElementById('quizFeedback');
+  if(isCorrect){ fb.textContent = '¡Correcto!'; fb.className = 'quiz-feedback correct'; }
+  else { fb.textContent = 'Respuesta correcta: ' + quiz.correctText; fb.className = 'quiz-feedback incorrect'; }
+  finalizeAnswer(isCorrect, quiz.correctKey);
+}
+
+function nextQuiz(){
+  quiz.pos++;
+  if(quiz.pos >= quiz.queue.length){
+    quiz.pos = 0;
+    const pool = currentBlockKey === 'review' ? buildReviewDeck() : buildDeckForBlock(currentBlockKey);
+    quiz.queue = shuffleArr(pool);
+    if(quiz.queue.length === 0){ renderQuizView(); return; }
+  }
+  renderQuizQuestion();
+}
+
+/* ---------------- EVENTS ---------------- */
+document.querySelectorAll('.mode-toggle button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.mode-toggle button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    mode = btn.dataset.mode;
+    if(mode === 'cards'){ loadDeck(); renderCardsView(); }
+    else { startQuiz(); }
+    renderSidebar();
+  });
+});
+
+document.querySelectorAll('#verbFilterToggle button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('#verbFilterToggle button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    verbFilter = btn.dataset.filter;
+    saveSettings();
+    if(mode === 'cards'){ loadDeck(); renderCardsView(); }
+    else { startQuiz(); }
+  });
+});
+
+document.querySelectorAll('#dirToggle button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('#dirToggle button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    direction = btn.dataset.dir;
+    saveSettings();
+    if(mode === 'cards' && deck.length) renderCard();
+  });
+});
+
+document.getElementById('flashcardInner').addEventListener('click', flipCard);
+document.getElementById('prevBtn').addEventListener('click', prevCard);
+document.getElementById('nextBtn').addEventListener('click', nextCard);
+document.getElementById('btnLearning').addEventListener('click', () => markStatus('learning'));
+document.getElementById('btnKnown').addEventListener('click', () => markStatus('known'));
+document.getElementById('shuffleBtn').addEventListener('click', () => { shuffleArr(deck); deckPos = 0; renderCardsView(); });
+document.getElementById('resetBtn').addEventListener('click', () => {
+  deck.forEach(c => delete progress[cardKey(c)]);
+  saveProgress();
+  renderSidebar();
+  renderCardsView();
+});
+document.getElementById('quizNextBtn').addEventListener('click', nextQuiz);
+document.getElementById('quizSubmitBtn').addEventListener('click', submitTypedAnswer);
+document.getElementById('quizInput').addEventListener('keydown', (e) => {
+  if(e.key === 'Enter'){ e.preventDefault(); submitTypedAnswer(); }
+});
+
+document.addEventListener('keydown', (e) => {
+  if(mode !== 'cards') return;
+  if(e.code === 'Space'){ e.preventDefault(); flipCard(); }
+  else if(e.code === 'ArrowRight'){ nextCard(); }
+  else if(e.code === 'ArrowLeft'){ prevCard(); }
+  else if(e.key === '1'){ markStatus('learning'); }
+  else if(e.key === '2'){ markStatus('known'); }
+});
+
+/* ---------------- INIT ---------------- */
+(function init(){
+  loadProgress();
+  loadSettings();
+  document.querySelectorAll('#verbFilterToggle button').forEach(b => b.classList.toggle('active', b.dataset.filter === verbFilter));
+  document.querySelectorAll('#dirToggle button').forEach(b => b.classList.toggle('active', b.dataset.dir === direction));
+  renderSidebar();
+  loadDeck();
+  renderCardsView();
+  if(!storageAvailable){
+    const warn = document.createElement('p');
+    warn.className = 'storage-warn';
+    warn.textContent = '⚠ Este navegador no permite guardar el progreso localmente (revisa el modo privado o los permisos de almacenamiento).';
+    document.querySelector('.sidebar').insertBefore(warn, document.getElementById('blockNav'));
+  }
+})();
